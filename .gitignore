@@ -1,4 +1,7 @@
 gunicorn.ctl
+.DS_Store
+env/
+node_modules/
 __pycache__/
 staticfiles/
 media/

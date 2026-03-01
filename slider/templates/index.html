@@ -1,11 +1,14 @@
+{% load django_vite %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Slider</title>
+    {% vite_asset 'js/app.js' %}
 </head>
 <body>
 
 <div class="slider">
+    <h1>Hello</h1>
     {% for image in images %}
         <div class="slide">
             <img src="{{ image.image.url }}" alt="{{ image.title }}">

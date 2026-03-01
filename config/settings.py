@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_vite',
     'filer',
     'easy_thumbnails',
     'adminsortable2',
@@ -81,6 +82,12 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+DJANGO_VITE = {
+    "default": {
+        "manifest_path": STATIC_ROOT / ".vite/manifest.json",
+    }
+}
 
 DATABASES = {
     "default": {
