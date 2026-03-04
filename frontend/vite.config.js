@@ -1,11 +1,25 @@
-import { defineConfig } from 'vite'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: resolve(__dirname, 'src'),
   build: {
     manifest: true,
-    outDir: '../staticfiles',
+    outDir: resolve(__dirname, '../staticfiles'),
     rollupOptions: {
-      input: 'js/app.js'
-    }
-  }
+      input: resolve(__dirname, 'src/js/main.js'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        silenceDeprecations: [
+          'import',
+          'mixed-decls',
+          'color-functions',
+          'global-builtin',
+        ],
+      },
+    },
+  },
 })

@@ -1,4 +1,4 @@
-import '../css/app.scss';
+import '../css/styles.scss';
 import $ from 'jquery';
 
 window.$ = $;
