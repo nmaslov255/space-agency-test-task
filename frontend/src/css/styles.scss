@@ -1,1 +1,18 @@
+// 1. Импорт функций Bootstrap
+@import "bootstrap/scss/functions";
+
+// 2. Переопределяем переменные
+@import "bootstrap/scss/variables";
+
+// 3. Расширяем spacers
+$spacers: map-merge(
+  $spacers,
+  (
+    6: 4.5rem,   // 72px
+    7: 6rem,     // 96px
+    8: 9rem,     // 144px
+    9: 12rem     // 192px
+  )
+);
+
 @import "bootstrap/scss/bootstrap";
