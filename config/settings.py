@@ -90,6 +90,9 @@ DJANGO_VITE = {
     }
 }
 
+VITE_DEV_MODE = True if DEBUG else False
+VITE_DEV_SERVER = "http://localhost:5173"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
