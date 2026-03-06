@@ -1,10 +1,9 @@
-// 1. Импорт функций Bootstrap
-@import "bootstrap/scss/functions";
+@import "bootstrap/scss/bootstrap";
 
-// 2. Переопределяем переменные
-@import "bootstrap/scss/variables";
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
 
-// 3. Расширяем spacers
 $spacers: map-merge(
   $spacers,
   (
@@ -15,4 +14,58 @@ $spacers: map-merge(
   )
 );
 
-@import "bootstrap/scss/bootstrap";
+.slick-slide {
+    margin: 5px;
+  }
+
+@media (min-width: 992px) {
+  .slick-slide {
+    margin: 10px;
+  }
+}
+
+.slick-next,
+.slick-prev {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0px !important;
+
+}
+
+.slick-next::before, 
+.slick-prev::before {
+    font-family: inherit !important;
+    border-radius: 100% !important;
+    color: white !important;
+    background: red !important;
+    width: 100% !important;
+    padding: 8px 10px !important;
+    font-size: 18px !important;
+    margin: -20px;
+}
+
+.slick-prev::before {
+    margin-right: 28px;
+}
+
+.slick-next::before {
+    margin-left: 28px;
+}
+
+.slider-nav .slick-current {
+    box-sizing: border-box;
+    box-shadow: 0 0 0 3px #fff;
+    border-radius: 3px;
+}
+
+.slider-main img,
+.slider-nav img,
+.eath img {
+    border-radius: 1%;
+}
+
+/*.slider-nav .slick-slide img {
+  height: 80px;
+  object-fit: cover;
+  width: 100%;
+}*/
