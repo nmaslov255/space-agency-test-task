@@ -1,19 +1,136 @@
 {% load django_vite %}
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Slider</title>
-    {% vite_asset 'js/app.js' %}
+  <title>Космическое агенство</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_asset 'js/main.js' %}
+
 </head>
 <body>
 
-<div class="slider">
-    <div class="px-4 py-5 my-5 text-center"> <h1 class="display-5 fw-bold text-body-emphasis">Center</h1> <div class="col-lg-6 mx-auto"> <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p> <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button> <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button> </div> </div> </div>
-    {% for image in images %}
-        <div class="slide">
-            <img src="{{ image.image.url }}" alt="{{ image.title }}">
+<div class="main">
+  <header style="background: #17191D;">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+          <button class="navbar-toggler" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarMenu" 
+              aria-controls="navbarMenu" 
+              aria-expanded="false" 
+              aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a href="#" class="navbar-brand me-auto" style="margin-left: 20px;">
+            <img src="{{ MEDIA_URL }}nasa-logo.svg">
+          </a>
+
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link text-white" href="#">ПРЕИМУЩЕСТВА</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="#">ФОТОГРАФИИ</a></li>
+            </ul>
+          </div>
+
+          <button type="button" class="btn btn-danger">ВХОД</button>
+      </nav>
+    </div>
+  </header>
+
+  <section style="background: #000000">
+    <div class="container py-5 py-lg-7 p-md-5 p-sm-3 bg-black">
+      <div class="main-text mb-lg-7 mb-md-5 mb-sm-3">
+        <div class="row">
+          <div class="col-lg-8 col-md-12 mx-auto text-center">
+                <h1 class="text-white">Космическое агенство</h1>
+                <p style="color:#C3CDDD">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
+          </div>
         </div>
-    {% endfor %}
+      </div>
+
+      <div class="row g-5 text-white">
+        <div class="eath col-lg-6 col-md-12 order-2 order-lg-1 left d-flex justify-content-center align-items-center">
+          <img src="{{ MEDIA_URL }}eath.jpg" class="img-fluid" style="max-height: 450px;">
+        </div>
+        
+        <div class="col-lg-6 col-md-12 order-1 order-lg-2 d-flex right">
+          <div class="row g-3">
+
+          <div class="col-6 p-1 p-lg-4 justify-content-center align-items-center left top">
+            <div class="text-center">
+              <img src="{{ MEDIA_URL }}shattle.svg" class="img-fluid h-48 h-md-64" alt="">
+              <div class="card-body p-2 p-lg-3">
+                <p class="card-text">Спейс шаттлы — пилотируемые корабли</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 p-1 p-lg-4 justify-content-center align-items-center right top">
+            <div class="text-center">
+              <img src="{ MEDIA_URL }}/telescope.svg" class="img-fluid h-48 h-md-64" alt="">
+              <div class="card-body p-2 p-lg-3">
+                <p class="card-text">Лучшее телескопическое оборудование</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 p-1 p-lg-4 justify-content-center align-items-center left bottom">
+            <div class="text-center">
+              <img src="{{ MEDIA_URL }}moon.svg" class="img-fluid h-48 h-md-64" alt="">
+              <div class="card-body p-2 p-lg-3">
+                <p class="card-text">Исследовательские станции на Луне — шаг к новым открытиям!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 p-1 p-lg-4 justify-content-center align-items-center right bottom">
+            <div class="text-center">
+              <img src="{{ MEDIA_URL }}medal.svg" class="img-fluid h-48 h-md-64" alt="">
+              <div class="card-body p-2 p-lg-3">
+                <p class="card-text">Золотая медаль по научным исследованиям</p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #17191D;">
+    <div class="container p-0 p-md-5 py-4 py-md-5 text-white">
+      <h2 class="text-center mb-lg-4 mb-3">Фотографии</h2>
+
+      <div class="slider mx-lg-5 mx-0">
+        <div class="slider-main">
+            {% for image in images %}
+              <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid w-100">
+            {% endfor %}
+        </div>
+
+        <div class="slider-nav">
+            {% for image in images %}
+              <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid w-100">
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="modal fade" id="photoModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <button class="btn-close btn-close-white ms-auto mb-2" data-bs-dismiss="modal"></button>
+      <img src="" id="modalPhoto" class="img-fluid rounded">
+    </div>
+  </div>
 </div>
 
 </body>

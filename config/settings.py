@@ -65,6 +65,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -77,21 +78,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
-
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-DJANGO_VITE = {
-    "default": {
-        "manifest_path": STATIC_ROOT / ".vite/manifest.json",
-    }
-}
-
-VITE_DEV_MODE = True if DEBUG else False
-VITE_DEV_SERVER = "http://localhost:5173"
 
 DATABASES = {
     "default": {
@@ -138,7 +124,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+DJANGO_VITE = {
+    "default": {
+        "manifest_path": STATIC_ROOT / ".vite/manifest.json",
+    }
+}
+
+VITE_DEV_MODE = True if DEBUG else False
+VITE_DEV_SERVER = "http://localhost:5173"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
