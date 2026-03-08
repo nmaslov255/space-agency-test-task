@@ -1,20 +1,24 @@
 services:
   db:
-    image: postgres:16
+    image: mysql:8
+    env_file: .env
     environment:
-      POSTGRES_DB: sliderdb
-      POSTGRES_USER: slideruser
-      POSTGRES_PASSWORD: sliderpass
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U slideruser -d sliderdb -h localhost -p 5432"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-p${DB_PASSWORD}"]
       interval: 5s
       timeout: 5s
       retries: 5
+      start_period: 30s
 
   web:
     build: .
+    env_file: .env
     command: >
       sh -c "
       python manage.py migrate &&
@@ -30,10 +34,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    environment:
-      DATABASE_URL: postgres://slideruser:sliderpass@db:5432/sliderdb
 
 volumes:
-  postgres_data:
+  mysql_data:
   media_volume:
   static_volume:
