@@ -21,7 +21,7 @@ $(document).ready(function() {
     fade: true,
     infinite: true,
     asNavFor: '.slider-nav',
-    initialSlide: 3,
+    adaptiveHeight: true,
   })
 
   $('.slider-nav').slick({
@@ -33,7 +33,6 @@ $(document).ready(function() {
     asNavFor: '.slider-main',
     focusOnSelect: true,
     infinite: true,
-    initialSlide: 3,
     centerMode: true,
     centerPadding: '0px',
 
