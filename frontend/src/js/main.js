@@ -1,7 +1,7 @@
 import '../css/styles.scss';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import * as bootstrap from 'bootstrap'
 
 import $ from 'jquery'
 
@@ -13,16 +13,16 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 
-  $(document).ready(function() {
-    $('.slider-main').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      fade: true,
-      infinite: true,
-      asNavFor: '.slider-nav',
-      initialSlide: 3,
-    })
+$(document).ready(function() {
+  $('.slider-main').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    infinite: true,
+    asNavFor: '.slider-nav',
+    initialSlide: 3,
+  })
 
   $('.slider-nav').slick({
     slidesToShow: 5,
@@ -46,5 +46,12 @@ import 'slick-carousel/slick/slick-theme.css'
         }
       },
     ]
+  })
+
+
+  $('.slider-main img').on('click', function() {
+    const src = $(this).attr('src')
+    $('#modalPhoto').attr('src', src)
+    new bootstrap.Modal('#photoModal').show()
   })
 })

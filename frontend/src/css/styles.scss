@@ -4,16 +4,6 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
-$spacers: map-merge(
-  $spacers,
-  (
-    6: 4.5rem,   // 72px
-    7: 6rem,     // 96px
-    8: 9rem,     // 144px
-    9: 12rem     // 192px
-  )
-);
-
 .slick-slide {
     margin: 5px;
   }
@@ -62,6 +52,10 @@ $spacers: map-merge(
 .slider-nav img,
 .eath img {
     border-radius: 1%;
+}
+
+.slider-main img {
+    cursor: pointer;
 }
 
 /*.slider-nav .slick-slide img {
