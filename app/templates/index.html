@@ -12,7 +12,7 @@
 <body>
 
 <div class="main">
-  <header style="background: #17191D;">
+  <header>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <button class="navbar-toggler" 
@@ -25,8 +25,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a href="#" class="navbar-brand me-auto" style="margin-left: 20px;">
-          <img src="/asset/nasa-logo.svg">
+        <a href="#" class="navbar-brand me-auto">
+          <img class="ms-3" src="{{ MEDIA_URL }}nasa-logo.svg">
         </a>
 
         <div class="collapse navbar-collapse justify-content-center order-2 order-lg-1" id="navbarMenu">
@@ -41,20 +41,20 @@
     </div>
   </header>
 
-  <section style="background: #000000">
+  <section class="agencyField">
     <div class="container py-5 py-lg-7 p-md-5 p-sm-3 bg-black">
       <div class="main-text mb-lg-7 mb-md-5 mb-sm-3">
         <div class="row">
           <div class="col-lg-8 col-md-12 mx-auto text-center">
                 <h1 class="text-white">Космическое агенство</h1>
-                <p style="color:#C3CDDD">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
+                <p class="subtext">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
           </div>
         </div>
       </div>
 
       <div class="row g-5 text-white">
         <div class="eath col-lg-6 col-md-12 order-2 order-lg-1 left d-flex justify-content-center align-items-center">
-          <img src="{{ MEDIA_URL }}eath.jpg" class="img-fluid" style="max-height: 450px;">
+          <img src="{{ MEDIA_URL }}eath.jpg" class="img-fluid puctire-max-width">
         </div>
         
         <div class="col-lg-6 col-md-12 order-1 order-lg-2 d-flex right">
@@ -103,7 +103,7 @@
     </div>
   </section>
 
-  <section style="background: #17191D;">
+  <section class="sliderField">
     <div class="container p-0 p-md-5 py-4 py-md-5 text-white">
       <h2 class="text-center mb-lg-4 mb-3">Фотографии</h2>
 

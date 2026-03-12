@@ -4,6 +4,27 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
+header {
+    background: #17191D;
+}
+
+section.agencyField {
+    background: #000000;
+}
+
+section.sliderField {
+    background: #17191D;
+}
+
+.subtext {
+    color: #C3CDDD;
+}
+
+.puctire-max-width {
+    max-width: 450px;
+    height: auto;
+}
+
 .slick-slide {
     margin: 5px;
   }
