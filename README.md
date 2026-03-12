@@ -26,3 +26,5 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 - Сохранить часть картинок загруженными через миграции
 - Копипаста между app/template/index.html и frontend/src/index.html (последний нужен только для удобства верстки, генерить через jinja2 шаблонизатор)
 - убрать противоречия в docker-compose и dockerfile, лишние копирования и тд
+- добавить favicon
+- прогнать код через линтеры, привести к pep8
