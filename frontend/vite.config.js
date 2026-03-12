@@ -6,7 +6,7 @@ export default defineConfig({
   root: resolve(__dirname, 'src'),
   build: {
     manifest: true,
-    outDir: resolve(__dirname, '../staticfiles'),
+    outDir: resolve(__dirname, 'bundle'),
     rollupOptions: {
       input: resolve(__dirname, 'src/js/main.js'),
     },

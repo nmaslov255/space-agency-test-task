@@ -1,7 +1,7 @@
 ## Тестовое задание, лендинг космического агенства со слайдером и админкой
 
 ### Deploy
-- заполнить поля в .env
+- заполнить поля в .env.example и переименовать в .env
 - docker compose up --build
 - docker compose exec web python manage.py createsuperuser
 
@@ -24,4 +24,5 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 
 # TODO
 - Сохранить часть картинок загруженными через миграции
-- Убрать '../staticfiles' из vite, перемещать npm сборку на этапе сборки docker'а
+- Копипаста между app/template/index.html и frontend/src/index.html (последний нужен только для удобства верстки, генерить через jinja2 шаблонизатор)
+- убрать противоречия в docker-compose и dockerfile, лишние копирования и тд
