@@ -4,6 +4,11 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
+.container {
+    // ограничиваем ширину на больших разрешениях
+    max-width: map-get($container-max-widths, xl) !important;
+}
+
 header {
     background: #17191D;
 }
@@ -23,6 +28,17 @@ section.sliderField {
 .puctire-max-width {
     max-width: 450px;
     height: auto;
+}
+
+
+img.space-icons {
+    max-width: 48px;
+}
+
+@media (min-width: 992px) {
+    img.space-icons {
+        max-width: 64px;
+    }
 }
 
 .slick-slide {
