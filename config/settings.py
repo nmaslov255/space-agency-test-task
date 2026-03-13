@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_vite',
-    'filer',
     'easy_thumbnails',
+    'filer',
     'adminsortable2',
     'app',
 ]
