@@ -1,13 +1,13 @@
-{% load django_vite %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  {% load django_vite %}
+  {% vite_hmr_client %}
   <title>Космическое агенство</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% vite_asset 'js/main.js' %}
-
 </head>
 <body>
 

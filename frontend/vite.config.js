@@ -1,7 +1,6 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
-
 export default defineConfig({
   root: resolve(__dirname, 'src'),
   build: {
@@ -11,6 +10,10 @@ export default defineConfig({
       input: resolve(__dirname, 'src/js/main.js'),
     },
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -19,8 +22,9 @@ export default defineConfig({
           'mixed-decls',
           'color-functions',
           'global-builtin',
+          'if-function',
         ],
       },
     },
   },
-})
+});

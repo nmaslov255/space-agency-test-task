@@ -1,4 +1,4 @@
-# ---------- Stage 1: frontend build ----------
+# ---------- Stage 1: frontend build (использоваться только в prod сборке) ----------
 FROM node:20-alpine AS frontend-builder
 
 WORKDIR /app/frontend
@@ -13,7 +13,7 @@ RUN npm run build
 
 
 # ---------- Stage 2: backend runtime ----------
-FROM python:3.12-slim
+FROM python:3.12-slim AS backend
 
 WORKDIR /app
 
@@ -22,8 +22,8 @@ RUN pip install --no-cache-dir -r req.pip
 
 COPY . .
 
-COPY --from=frontend-builder /app/frontend/bundle/ ./staticfiles/
-COPY --from=frontend-builder /app/frontend/src/asset/ ./media/
+COPY --from=frontend-builder /app/frontend/bundle/ /app/staticfiles/
+COPY --from=frontend-builder /app/frontend/src/asset/ /app/media/
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

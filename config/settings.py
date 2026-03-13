@@ -24,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -133,12 +132,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DJANGO_VITE = {
     "default": {
+        "dev_mode": DEBUG,
+        "dev_server_host": "localhost",
+        "dev_server_port": 5173,
+        "static_url_prefix": "/",
         "manifest_path": STATIC_ROOT / ".vite/manifest.json",
     }
 }
-
-VITE_DEV_MODE = True if DEBUG else False
-VITE_DEV_SERVER = "http://localhost:5173"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
