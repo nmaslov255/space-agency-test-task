@@ -17,18 +17,17 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 
 ### Деплой
 - `docker-compose.yaml` для локальной разработки, подтягивает изменения кода в контейнер на лету.
-- `docker-compose.prod.yaml` продакшен сборка, кол-во воркеров gunicorn надо считать самому.
+- `docker-compose.prod.yaml` продакшен сборка.
 
 1. заполнить поля в .env.example и переименовать в .env
 2. docker compose up --build
 3. docker compose exec web python manage.py createsuperuser
 
 #### Примечания
-- Для сборки frontend зависимостей используется npm Vite. Разметка генерируется на стороне Django.
-- Дефолтные картинки слайдера загружаются в админку через `app/migrations/0002_load_default_slides.py`
+- Для frontend зависимостей используется npm Vite. Разметка генерируется на стороне Django, бандлы переносятся в staticfiles.
+- Дефолтные картинки для слайдера загружаются через миграцию `app/migrations/0002_load_default_slides.py`
 
 #### TODO
-- Грязный docker-compose и dockerfile, лишние копирования и тд
 - Добавить favicon, overflow для слайдера на мобилах, фикс пропорций по макету
-- Комментарии к функциям и модулям
 - Прогнать код через линтеры, привести к pep8
+- Комментарии к функциям и модулям
