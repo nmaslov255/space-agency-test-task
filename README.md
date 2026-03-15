@@ -29,7 +29,6 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 
 #### TODO
 - Грязный docker-compose и dockerfile, лишние копирования и тд
-- Логирование prod сборки, поддержка https/ssl
 - Добавить favicon, overflow для слайдера на мобилах, фикс пропорций по макету
 - Комментарии к функциям и модулям
 - Прогнать код через линтеры, привести к pep8

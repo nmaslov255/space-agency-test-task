@@ -10,11 +10,9 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-p${DB_PASSWORD}"]
       interval: 5s
       timeout: 5s
       retries: 5
-      start_period: 30s
 
   web:
     build: 
@@ -33,17 +31,16 @@ services:
       - "8000:8000"
     restart: always
     depends_on:
-      db:
-        condition: service_healthy
+      - db
 
   frontend:
       image: node:20-alpine
       working_dir: /app/frontend
       volumes:
-          - ./frontend:/app/frontend
-          - /app/frontend/node_modules
+        - ./frontend:/app/frontend
+        - /app/frontend/node_modules
       ports:
-          - "5173:5173"
+        - "5173:5173"
       command: sh -c "npm ci && npm run dev"
 
 volumes:
