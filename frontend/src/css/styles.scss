@@ -1,8 +1,5 @@
 @import "bootstrap/scss/bootstrap";
 
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
 
 .container {
     // ограничиваем ширину на больших разрешениях
@@ -24,12 +21,6 @@ section.sliderField {
 .subtext {
     color: #C3CDDD;
 }
-
-.puctire-max-width {
-    max-width: 450px;
-    height: auto;
-}
-
 
 img.space-icons {
     max-width: 48px;
@@ -87,16 +78,15 @@ img.space-icons {
 
 .slider-main img,
 .slider-nav img,
-.eath img {
+.earth img {
     border-radius: 1%;
 }
 
-.slider-main img {
+.slider-main img,
+.slider-nav img {
     cursor: pointer;
 }
 
-/*.slider-nav .slick-slide img {
-  height: 80px;
+.slider-nav .slick-slide {
   object-fit: cover;
-  width: 100%;
-}*/
+}
