@@ -1,0 +1,29 @@
+<section class="sliderField">
+  <div class="container py-4 py-md-5 text-white">
+    <h2 class="text-center mb-lg-4 mb-3">Фотографии</h2>
+
+    <div class="slider mx-lg-5 mx-0">
+      <div class="slider-main">
+        {% for image in images %}
+          <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid w-100">
+        {% endfor %}
+      </div>
+
+      <div class="slider-nav">
+        {% for image in images %}
+          <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid w-100">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- модальное окно для слайдера -->
+<div class="modal fade" id="photoModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <button class="btn-close btn-close-white ms-auto mb-2" data-bs-dismiss="modal"></button>
+      <img src="" id="modalPhoto" class="img-fluid rounded">
+    </div>
+  </div>
+</div>
