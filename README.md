@@ -15,6 +15,8 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 - ✅ записи слайдера в админке должны сортироваться при помощи drag&drop, для этого необходимо использовать пакет django-admin-sortable2
 - ✅ все зависимости для запуска проекта расположить в файле req.pip в корне проекта.
 
+![Shell](https://raw.githubusercontent.com/nmaslov255/hostfiles/refs/heads/master/Снимок%20экрана%202026-03-28%20в%2001.58.27.png)
+
 ### Деплой
 - `docker-compose.yaml` для локальной разработки, подтягивает изменения кода в контейнер на лету.
 - `docker-compose.prod.yaml` продакшен сборка.
