@@ -1,6 +1,18 @@
 ## Лендинг космического агенства со слайдером и админкой
 Тестовое задание на позицию Backend разработчика
 
+### Деплой
+- `docker-compose.yaml` для локальной разработки, подтягивает изменения кода в контейнер на лету.
+- `docker-compose.prod.yaml` продакшен сборка.
+
+1. заполнить поля в .env.example и переименовать в .env
+2. docker compose up --build
+3. docker compose exec web python manage.py createsuperuser
+
+#### Примечания
+- Для frontend зависимостей используется npm Vite. Разметка генерируется на стороне Django, бандлы переносятся в staticfiles.
+- Дефолтные картинки для слайдера загружаются через миграцию `app/migrations/0002_load_default_slides.py`
+
 ### Техническое задание
 Необходимо собрать с помощью bootstrap 5 и запустить новую страницу по макету:
 https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
@@ -15,19 +27,8 @@ https://www.figma.com/design/csU67B0SQVZO1AkwvMZa3D/
 - ✅ записи слайдера в админке должны сортироваться при помощи drag&drop, для этого необходимо использовать пакет django-admin-sortable2
 - ✅ все зависимости для запуска проекта расположить в файле req.pip в корне проекта.
 
-![Shell](https://raw.githubusercontent.com/nmaslov255/hostfiles/refs/heads/master/Снимок%20экрана%202026-03-28%20в%2001.58.27.png)
-
-### Деплой
-- `docker-compose.yaml` для локальной разработки, подтягивает изменения кода в контейнер на лету.
-- `docker-compose.prod.yaml` продакшен сборка.
-
-1. заполнить поля в .env.example и переименовать в .env
-2. docker compose up --build
-3. docker compose exec web python manage.py createsuperuser
-
-#### Примечания
-- Для frontend зависимостей используется npm Vite. Разметка генерируется на стороне Django, бандлы переносятся в staticfiles.
-- Дефолтные картинки для слайдера загружаются через миграцию `app/migrations/0002_load_default_slides.py`
+P.S. В момент сдачи макет выглядел так:
+![Shell](https://raw.githubusercontent.com/nmaslov255/hostfiles/refs/heads/master/space-agency-layout.png)
 
 #### TODO
 - Добавить favicon, overflow для слайдера на мобилах, фикс пропорций по макету
